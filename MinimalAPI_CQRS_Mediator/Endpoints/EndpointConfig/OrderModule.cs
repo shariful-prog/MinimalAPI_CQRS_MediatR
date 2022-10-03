@@ -16,15 +16,5 @@ namespace MinimalAPI_CQRS_Mediator.Module.EndpointModule
             });
             return endpoints;
         }
-
-        public IServiceCollection RegisterModule(IServiceCollection services)
-        {
-            // dependency Injection 
-            //services.AddSingleton(new OrderConfig());
-            //services.AddScoped<IOrdersRepository, OrdersRepository>();
-            //services.AddScoped<ICustomersRepository, CustomersRepository>();
-            //services.AddScoped<IPayment, PaymentService>();
-            return services;
-        }
     }
 }

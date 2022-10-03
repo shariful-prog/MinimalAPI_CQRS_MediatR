@@ -3,19 +3,6 @@
     public static class ModuleExtensions
     {
         static readonly List<IModule> registeredModules = new List<IModule>();
-
-        public static IServiceCollection RegisterModules(this IServiceCollection services)
-        {
-            var modules = DiscoverModules();
-            foreach (var module in modules)
-            {
-                module.RegisterModule(services);
-                registeredModules.Add(module);
-            }
-
-            return services;
-        }
-
         public static WebApplication MapEndpoints(this WebApplication app)
         {
             foreach (var module in registeredModules)
@@ -23,6 +10,17 @@
                 module.MapEndpoints(app);
             }
             return app;
+        }
+
+        public static IServiceCollection RegisterModules(this IServiceCollection services)
+        {
+            var modules = DiscoverModules();
+            foreach (var module in modules)
+            {
+                registeredModules.Add(module);
+            }
+
+            return services;
         }
 
         private static IEnumerable<IModule> DiscoverModules()
