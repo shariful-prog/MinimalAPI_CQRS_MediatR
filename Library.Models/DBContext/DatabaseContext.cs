@@ -1,5 +1,5 @@
-﻿using DATAMODEL.AppUserManager;
-using DATAMODEL.DBModels;
+﻿using Library.Models.AppUserManager;
+using Library.Models.DBModels;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DATAMODEL.DBContext
+namespace Library.Models.DBContext
 {
     public class DatabaseContext : IdentityDbContext<ApplicationUser>
     {

@@ -1,4 +1,4 @@
-using DATAMODEL.DBContext;
+using Library.Models.DBContext;
 using Microsoft.EntityFrameworkCore;
 using MinimalAPI_CQRS_Mediator.Endpoints.ModuleConfig;
 using MinimalAPI_CQRS_Mediator.Module.RouteModule;

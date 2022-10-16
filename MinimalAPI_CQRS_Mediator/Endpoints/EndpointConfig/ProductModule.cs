@@ -8,7 +8,9 @@ namespace MinimalAPI_CQRS_Mediator.Endpoints.EndpointConfig
         {
             endpoints.MapGet("/products", () =>
             {
-                return Results.BadRequest(new { message = "Product list" });
+                int a = 20;
+                if(a is >=20 && a<50) return Results.Ok(new { message = "Product list" });
+                return Results.BadRequest(new { message = "Product list Error" });
 
             });
 
